@@ -1,4 +1,5 @@
 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,30 +7,36 @@ using UnityEngine;
 public class PlayerShoots : MonoBehaviour
 {
 
-     public GameObject Bullet; // Reference to your prefab
+    [SerializeField] public GameObject bulletPrefab; 
+    
+    [SerializeField] public float bulletSpeed = 10f;
     // Start is called before the first frame update
     void Start()
     {
         
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetMouseButtonDown(0))
+        {
         //get vector to mouse position in world context
-        Vector3 mousePositionScreen = Input.mousePosition;
-        Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
-        Vector3 vectorToMouse = mousePositionWorld - transform.position;
+        Vector2 mousePositionScreen = Input.mousePosition;
+        Vector2 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
+        Vector2 vectorToMouse = mousePositionWorld - (Vector2)transform.position;
         //spawn bullet to travel along vector
 
-         if (Input.GetKeyDown(KeyCode.Space))
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(vectorToMouse.normalized * bulletSpeed, ForceMode2D.Impulse);
+           
         
-        {
-            // Spawn the prefab at a specific position
-        //pass den passenden vektor und lass die bullet traveln mit scritp auf bulletside
-            //Instantiate(Bullet, transform, Quaternion.identity);
+           Destroy(bullet, 5f);         //destroy bullet after 5s
         }
-    
         
+
     }
 }

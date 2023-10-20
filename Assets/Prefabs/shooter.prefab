@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 9103344293081546991}
   - component: {fileID: 1402624700246608770}
   m_Layer: 0
-  m_Name: shooty
+  m_Name: shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
