@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9103344293081546991}
   - component: {fileID: 1402624700246608770}
-  - component: {fileID: 667840467822096660}
+  - component: {fileID: 4369793026409366295}
   - component: {fileID: 7480577207314539070}
   - component: {fileID: -7451824631191529134}
   - component: {fileID: -505129518053743791}
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.546, y: 4.2667, z: 0}
-  m_LocalScale: {x: 0.492, y: 0.4666, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,10 +77,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.17715669, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: dbdd92c5f0587f846a66895bf9e1ab70, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -88,8 +88,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &667840467822096660
-CircleCollider2D:
+--- !u!70 &4369793026409366295
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -100,10 +100,10 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -121,8 +121,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 0.5, y: 1.1}
+  m_Direction: 0
 --- !u!114 &7480577207314539070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4613368987487835546, guid: cc1de7d76e1ea13459b9e1ea53d2c61a, type: 3}
   bulletSpeed: 10
+  attackDelay: 1
+  ammo: 3
 --- !u!114 &-7451824631191529134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d8c1cb5b1b38a41be137c82308b82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
+  movementSpeed: 2.5
+  rotationSpeed: 100
 --- !u!114 &-505129518053743791
 MonoBehaviour:
   m_ObjectHideFlags: 0
