@@ -1,0 +1,472 @@
+fileFormatVersion: 2
+guid: 1506440fb76527d4ab7f32640452f1c0
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Main Ship - Shields - Round Shield_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 50
+      height: 50
+    spriteID: d25971380f517914c954e3266c671f81
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Main Ship - Shields - Round Shield_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 62
+      width: 50
+      height: 50
+    spriteID: a9285e843eea1d94abcd1481c6e10485
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 62}
+  - name: Main Ship - Shields - Round Shield_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 120
+      width: 50
+      height: 50
+    spriteID: 5599f2408fcc29a4a8b498e80ba13802
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 120}
+  - name: Main Ship - Shields - Round Shield_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 178
+      width: 50
+      height: 50
+    spriteID: 4be013a1a04644d499756bbc9f484779
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 178}
+  - name: Main Ship - Shields - Round Shield_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 62
+      y: 4
+      width: 50
+      height: 50
+    spriteID: c56fe7dc89810db4c84f229dd3af9214
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 62, y: 4}
+  - name: Main Ship - Shields - Round Shield_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 62
+      y: 62
+      width: 50
+      height: 50
+    spriteID: 1401ee5bc4ddc0145a331dd845ffa896
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 62, y: 62}
+  - name: Main Ship - Shields - Round Shield_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 62
+      y: 120
+      width: 50
+      height: 50
+    spriteID: 1756e3de4057b1341986d3923f426f42
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 62, y: 120}
+  - name: Main Ship - Shields - Round Shield_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 62
+      y: 178
+      width: 50
+      height: 50
+    spriteID: bcd5226925cbd614ba4b319ae493749f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 62, y: 178}
+  - name: Main Ship - Shields - Round Shield_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 120
+      y: 4
+      width: 50
+      height: 50
+    spriteID: a5d56245bbe42a24cb2f00aff2d2c39e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 120, y: 4}
+  - name: Main Ship - Shields - Round Shield_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 120
+      y: 62
+      width: 50
+      height: 50
+    spriteID: 9b75db3da3bfe0d45ba853e21ff6a637
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 120, y: 62}
+  - name: Main Ship - Shields - Round Shield_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 120
+      y: 120
+      width: 50
+      height: 50
+    spriteID: 14945450bc1854b499ae8db4d6d45819
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 120, y: 120}
+  - name: Main Ship - Shields - Round Shield_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: -0.16}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 120
+      y: 178
+      width: 50
+      height: 50
+    spriteID: 8da24408a0e85c941abd20f08d05b728
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 120, y: 178}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -173071066
+    name: Main Ship - Shields - Round Shield
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Main Ship - Shields - Round Shield_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: d25971380f517914c954e3266c671f81
+    - name: Main Ship - Shields - Round Shield_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: a9285e843eea1d94abcd1481c6e10485
+    - name: Main Ship - Shields - Round Shield_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: 5599f2408fcc29a4a8b498e80ba13802
+    - name: Main Ship - Shields - Round Shield_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: 4be013a1a04644d499756bbc9f484779
+    - name: Main Ship - Shields - Round Shield_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: c56fe7dc89810db4c84f229dd3af9214
+    - name: Main Ship - Shields - Round Shield_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: 1401ee5bc4ddc0145a331dd845ffa896
+    - name: Main Ship - Shields - Round Shield_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: 1756e3de4057b1341986d3923f426f42
+    - name: Main Ship - Shields - Round Shield_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: bcd5226925cbd614ba4b319ae493749f
+    - name: Main Ship - Shields - Round Shield_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: a5d56245bbe42a24cb2f00aff2d2c39e
+    - name: Main Ship - Shields - Round Shield_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: 9b75db3da3bfe0d45ba853e21ff6a637
+    - name: Main Ship - Shields - Round Shield_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: 14945450bc1854b499ae8db4d6d45819
+    - name: Main Ship - Shields - Round Shield_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 7
+        y: 8
+        width: 50
+        height: 50
+      spriteId: 8da24408a0e85c941abd20f08d05b728
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 64, y: 64}
