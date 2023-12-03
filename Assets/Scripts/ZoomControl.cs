@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZoomControl : MonoBehaviour
 {
-    public float zoomsize = 5f;
+    [SerializeField] private float zoomsize = 8f;
     // Start is called before the first frame update
     void Start()
     {
