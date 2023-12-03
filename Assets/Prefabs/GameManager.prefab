@@ -64,3 +64,5 @@ MonoBehaviour:
       m_Calls: []
   playerPrefab: {fileID: 3864628417351035477, guid: 59ed31efa6d9073428784c55bb73ef39, type: 3}
   enemySpawnerPrefab: {fileID: 5703956936719178411, guid: 2049b425cab9e6c4e862352ddb3482c9, type: 3}
+  enemyBomberSpawnerPrefab: {fileID: 691744272295870191, guid: dbe8d7e7b3483694cb641d509097663f, type: 3}
+  enemySharpshooterSpawnerPrefab: {fileID: 8748726345720543538, guid: c31bc34ccb52410479abfb50b0e273e4, type: 3}

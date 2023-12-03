@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Decrease Reloadtime
+  m_text: Increase Health
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 37e4e811bf48d32458a30e6082b0c2b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dfa17e1fe735fc24d81d646f2a6803e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

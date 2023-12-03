@@ -80,6 +80,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject enemySpawnerPrefab;
 
+    [SerializeField] private GameObject enemyBomberSpawnerPrefab;
+
+    [SerializeField] private GameObject enemySharpshooterSpawnerPrefab;
+
     public static GameManager Instance
     {
         get
@@ -123,6 +127,15 @@ public class GameManager : MonoBehaviour
         Instantiate(enemySpawnerPrefab, spawnBottomBorder, Quaternion.identity);
         Vector3 spawnTopBorder = new Vector3(transform.position.x, transform.position.y + 10,transform.position.z);
         Instantiate(enemySpawnerPrefab, spawnTopBorder, Quaternion.identity);
+
+        //Bomber Enemy Spawner spawn
+
+        Instantiate(enemyBomberSpawnerPrefab, spawnLeftBorder, Quaternion.identity);
+
+        //SharpShooter Enemy Spawner spawn
+        
+        Instantiate(enemySharpshooterSpawnerPrefab, spawnRightBorder, Quaternion.identity);
+
     }
 
     public void PlayerLevelUp()
