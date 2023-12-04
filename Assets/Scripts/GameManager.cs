@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour
 
     void Update(){
         healthBar.fillAmount = Mathf.Clamp(playerHealth/playerMaxHealth,0,1);
-        ExpBar.fillAmount = Mathf.Clamp(playerEXP/expCap,0,1);
+        ExpBar.fillAmount = Mathf.Clamp(playerEXP/this.levels.Peek(),0,1);
         Debug.Log("playersxp: "+ playerEXP);
         Debug.Log("expvcap" +expCap);
     }
