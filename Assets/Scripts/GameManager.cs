@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -77,6 +78,9 @@ public class GameManager : MonoBehaviour
     public UnityEvent playerUpgradeEvent;
     public UnityEvent gameManagerInit;
 
+    public Image healthBar;
+    public Image ExpBar;
+    public float expCap = 3f;
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject enemySpawnerPrefab;
 
@@ -99,7 +103,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Queue<float> levels = new Queue<float>();
-        float expCap = 3f;
+        
         levels.Enqueue(expCap);
         for (int i = 1; i < 50; i++) 
         {
@@ -147,6 +151,13 @@ public class GameManager : MonoBehaviour
     public void UpgradeChosen()
     {
         _instance.gameIsPaused = false;
+    }
+
+    void Update(){
+        healthBar.fillAmount = Mathf.Clamp(playerHealth/playerMaxHealth,0,1);
+        ExpBar.fillAmount = Mathf.Clamp(playerEXP/expCap,0,1);
+        Debug.Log("playersxp: "+ playerEXP);
+        Debug.Log("expvcap" +expCap);
     }
 
 }
