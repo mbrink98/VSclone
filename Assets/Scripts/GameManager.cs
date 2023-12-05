@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
         get;
         set;
     }
+    public float [] levelsArray{
+        get;
+        set;
+    }
 
     public float playerEXP{
         get;
@@ -80,7 +84,10 @@ public class GameManager : MonoBehaviour
 
     public Image healthBar;
     public Image ExpBar;
-    public float expCap = 3f;
+    public float expCap = 4f;
+    public float expMulti = 1.7f;
+    
+
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject enemySpawnerPrefab;
 
@@ -107,10 +114,11 @@ public class GameManager : MonoBehaviour
         levels.Enqueue(expCap);
         for (int i = 1; i < 50; i++) 
         {
-            expCap = (float) Math.Round(expCap * 1.3);
+            expCap = (float) Math.Round(expCap * expMulti);
             levels.Enqueue(expCap);
         }
         this.levels = levels;
+        this.levelsArray = levels.ToArray();        //copy to array um pro lvl auf exp nötig zum aufsteigen zuzugreifen
         this.gameIsPaused = false;
         _instance = this;
 
@@ -154,10 +162,11 @@ public class GameManager : MonoBehaviour
     }
 
     void Update(){
-        healthBar.fillAmount = Mathf.Clamp(playerHealth/playerMaxHealth,0,1);
-        ExpBar.fillAmount = Mathf.Clamp(playerEXP/this.levels.Peek(),0,1);
-        Debug.Log("playersxp: "+ playerEXP);
-        Debug.Log("expvcap" +expCap);
+        healthBar.fillAmount = Mathf.Clamp(playerHealth/playerMaxHealth,0,1);               //könnte vllt ins playergetshitevent
+        ExpBar.fillAmount = Mathf.Clamp(playerEXP/levelsArray[(int)playerLVL],0,1);         //könnte vllt ins player gets lvl up event
+        
+       // Debug.Log("Levelsarray "+ levelsArray[(int)playerLVL]);
+        
     }
 
 }
