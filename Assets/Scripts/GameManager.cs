@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     public Image healthBar;
     public Image ExpBar;
-    public float expCap = 4f;
+    public float expCap = 3f;
     public float expMulti = 1.7f;
     
 
