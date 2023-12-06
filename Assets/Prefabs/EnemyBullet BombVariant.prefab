@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8583119969183212911, guid: 404dffec099290644ad49278da6dd885, type: 3}
+      propertyPath: m_Radius
+      value: 1.6
+      objectReference: {fileID: 0}
     - target: {fileID: -3858628950906148872, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -38,6 +42,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1927958701595837574, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927958701595837574, guid: 404dffec099290644ad49278da6dd885, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2550783080174985551, guid: 404dffec099290644ad49278da6dd885, type: 3}
@@ -97,7 +105,9 @@ PrefabInstance:
       value: EnemyBullet BombVariant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2511372611808371884, guid: 404dffec099290644ad49278da6dd885, type: 3}
+    - {fileID: 7186884764911182043, guid: 404dffec099290644ad49278da6dd885, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 404dffec099290644ad49278da6dd885, type: 3}

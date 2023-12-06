@@ -50,7 +50,8 @@ public class PlayerShoots : MonoBehaviour
         Vector2 mousePositionScreen = Input.mousePosition;
         Vector2 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
         GameManager.Instance.playerAmmo -= 1;
-        yield return new WaitForSeconds(GameManager.Instance.playerAttackDelay);
+        // yield return new WaitForSeconds(GameManager.Instance.playerAttackDelay); // for charge shot
+        yield return new WaitForSeconds(0); 
 
         Vector2 vectorToMouse = mousePositionWorld - (Vector2)transform.position;
 

@@ -20,6 +20,7 @@ public class EnemySpawn : MonoBehaviour
     {
         if (!GameManager.Instance.gameIsPaused)
         {
+            pos = transform.position;
             GameObject player = GameObject.FindWithTag("Player");
             if (player != null)
             {
