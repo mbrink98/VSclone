@@ -287,8 +287,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8326e1ed7ffa94eb5d194445fcb7a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTension: 0.1
-  cameraDampening: 0.5
+  tilePrefab: {fileID: 3589926819151040292, guid: db6bd5836ba8c9e4fa65c0d113593dc6, type: 3}
+  borderPrefab: {fileID: 0}
+  obstaclePrefab: {fileID: 2935347866033707180, guid: b12a37709b5b2c24397be7944335780c, type: 3}
+  tileZCoordinate: 0.5
+  size: 32
+  obstacleNumber: 50
 --- !u!1 &233839037
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +409,7 @@ GameObject:
   - component: {fileID: 1077578425}
   - component: {fileID: 1077578424}
   - component: {fileID: 1077578428}
+  - component: {fileID: 1077578429}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -543,6 +548,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomsize: 8
+--- !u!114 &1077578429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077578423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb89c0bc1b7a4f449b8845bb6136a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTension: 10
+  cameraDampening: 0.2
 --- !u!224 &1079179067 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 790032684916084189, guid: 54812a931f9c60249a758fc1e7c239a3, type: 3}
