@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
         set;
     }
 
+    public GameObject player{
+        get;
+        private set;
+    }
+
     public float playerEXP{
         get;
         set;
@@ -116,7 +121,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Player spawn
-        Instantiate(playerPrefab, transform.position, Quaternion.identity);
+        player = Instantiate(playerPrefab, transform.position, Quaternion.identity);
         
         // Enemy Spawner spawn
         Vector3 spawnLeftBorder = new Vector3(transform.position.x - 15, transform.position.y,transform.position.z);
