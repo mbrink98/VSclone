@@ -230,11 +230,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   v2force: {x: 1, y: 1}
-  Speed: 10000000
+  Speed: 40
   KeyForward: 119
   KeyBackwards: 115
   KeyLeft: 97
   KeyRight: 100
   turnspeed: 0.55
-  transform: {fileID: 9103344293081546991}
-  rb: {fileID: -9167387882254606483}
+  transform: {fileID: 0}
+  rb: {fileID: 0}
