@@ -34,8 +34,7 @@ public class Shoot : MonoBehaviour
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                     Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                     rb.AddForce(vectorToPlayer.normalized * bulletSpeed, ForceMode2D.Impulse);
-
-                    Destroy(bullet, 10f);         //destroy bullet after 10s  //add image that shows cannonballs impact in water
+                    // Destroy(bullet);
                 }
                 time += Time.deltaTime;
             }
