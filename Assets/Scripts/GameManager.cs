@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour
     }
 
     public Queue<float> levels{
+        get;
+        set;
+    }
+    public float [] levelsArray{
         get;
         set;
     }
@@ -83,6 +88,12 @@ public class GameManager : MonoBehaviour
     public UnityEvent gameManagerInit;
     public UnityEvent gameManagerStarted;
 
+    public Image healthBar;
+    public Image ExpBar;
+    public float expCap = 3f;
+    public float expMulti = 1.7f;
+    
+
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private GameObject enemySpawnerPrefab;
     [SerializeField] private GameObject enemyBomberSpawnerPrefab;
@@ -111,14 +122,15 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Queue<float> levels = new Queue<float>();
-        float expCap = 3f;
+        
         levels.Enqueue(expCap);
         for (int i = 1; i < 50; i++) 
         {
-            expCap = (float) Math.Round(expCap * 1.3);
+            expCap = (float) Math.Round(expCap * expMulti);
             levels.Enqueue(expCap);
         }
         this.levels = levels;
+        this.levelsArray = levels.ToArray();        //copy to array um pro lvl auf exp nötig zum aufsteigen zuzugreifen
         this.gameIsPaused = false;
         _instance = this;
 
@@ -179,6 +191,14 @@ public class GameManager : MonoBehaviour
     public void UpgradeChosen()
     {
         _instance.gameIsPaused = false;
+    }
+
+    void Update(){
+        healthBar.fillAmount = Mathf.Clamp(playerHealth/playerMaxHealth,0,1);               //könnte vllt ins playergetshitevent
+        ExpBar.fillAmount = Mathf.Clamp(playerEXP/levelsArray[(int)playerLVL],0,1);         //könnte vllt ins player gets lvl up event
+        
+       // Debug.Log("Levelsarray "+ levelsArray[(int)playerLVL]);
+        
     }
 
 }

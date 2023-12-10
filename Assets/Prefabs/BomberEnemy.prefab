@@ -292,4 +292,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6707361739761051565, guid: 739f12437edd055498cb778a83b2c2d3, type: 3}
   bulletSpeed: 50
   attackSpeed: 7
-  timeAhead: 5
+  timeAhead: 3

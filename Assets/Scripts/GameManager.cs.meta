@@ -4,8 +4,11 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - healthBar: {instanceID: 0}
   - playerPrefab: {fileID: 3864628417351035477, guid: 59ed31efa6d9073428784c55bb73ef39, type: 3}
   - enemySpawnerPrefab: {fileID: 5703956936719178411, guid: 2049b425cab9e6c4e862352ddb3482c9, type: 3}
+  - enemyBomberSpawnerPrefab: {instanceID: 0}
+  - enemySharpshooterSpawnerPrefab: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
