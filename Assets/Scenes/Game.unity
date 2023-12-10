@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 3589926819151040292, guid: db6bd5836ba8c9e4fa65c0d113593dc6, type: 3}
-  borderPrefab: {fileID: 0}
+  borderPrefab: {fileID: 4345285747894494695, guid: 190900c74d1724048bfcb2612fc5c9af, type: 3}
   obstaclePrefab: {fileID: 2935347866033707180, guid: b12a37709b5b2c24397be7944335780c, type: 3}
   tileZCoordinate: 0.5
   size: 32
