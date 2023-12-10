@@ -179,7 +179,9 @@ public class GameManager : MonoBehaviour
             Debug.Log(topLeft);
             Debug.Log(_instance.enemySpawner1.transform.position);
         }
-       
+
+        healthBar.fillAmount = Mathf.Clamp(playerHealth/playerMaxHealth,0,1);               //könnte vllt ins playergetshitevent
+        ExpBar.fillAmount = Mathf.Clamp(playerEXP/levelsArray[(int)playerLVL],0,1);         //könnte vllt ins player gets lvl up event
     }
 
     public void PlayerLevelUp()
@@ -191,14 +193,6 @@ public class GameManager : MonoBehaviour
     public void UpgradeChosen()
     {
         _instance.gameIsPaused = false;
-    }
-
-    void Update(){
-        healthBar.fillAmount = Mathf.Clamp(playerHealth/playerMaxHealth,0,1);               //könnte vllt ins playergetshitevent
-        ExpBar.fillAmount = Mathf.Clamp(playerEXP/levelsArray[(int)playerLVL],0,1);         //könnte vllt ins player gets lvl up event
-        
-       // Debug.Log("Levelsarray "+ levelsArray[(int)playerLVL]);
-        
     }
 
 }
