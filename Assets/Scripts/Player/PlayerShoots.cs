@@ -15,7 +15,7 @@ public class PlayerShoots : MonoBehaviour
     void Awake()
     {
         GameManager.Instance.playerBulletSpeed = 10f;
-        GameManager.Instance.playerAttackDelay = 1f;
+        GameManager.Instance.playerAttackDelay = 0.3f;
         GameManager.Instance.playerAmmo = 5f;
         GameManager.Instance.playerMaxAmmo = 3f;
         GameManager.Instance.playerReloadSpeed = 2f;

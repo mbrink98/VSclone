@@ -29,12 +29,13 @@ public class PlayerLevelUp : MonoBehaviour
     {
         if (collider.gameObject.tag == "EXP") {
             GameManager.Instance.playerEXP++;
-            if (GameManager.Instance.playerEXP >= GameManager.Instance.levels.Peek()) {
+            if (GameManager.Instance.playerEXP >= GameManager.Instance.levelsArray[(int) GameManager.Instance.playerLVL]) {
                 GameManager.Instance.playerLVL++;
+                GameManager.Instance.playerEXP = 0;         //vllt geht beim lvlup überschüssige ep verloren
                 playerLevelUpEvent.Invoke();
-                if (GameManager.Instance.levels.Count != 0) {
-                    GameManager.Instance.levels.Dequeue();
-                }
+               // if (GameManager.Instance.levels.Count != 0) {                 //habs auf Array umgestellt, hoffe es gibt keine bugs 
+                //    GameManager.Instance.levels.Dequeue();
+              //  }
             }
         }
     }
