@@ -46,7 +46,7 @@ public class MapManager : MonoBehaviour
         }
         for (int i = -size; i <= size; i++){
             for (int j = -size; j <= size; j++){
-                Instantiate(tilePrefab, new Vector3(i, j, tileZCoordinate), Quaternion.identity);
+                // Instantiate(tilePrefab, new Vector3(i, j, tileZCoordinate), Quaternion.identity);
                 if (obstaclePositions.Contains( (size + i) * (2*size + 1) + size + j )){
                     Instantiate(obstaclePrefab, new Vector3(i, j, 0), Quaternion.identity);
                 }
