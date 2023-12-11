@@ -15,11 +15,6 @@ public class GameManager : MonoBehaviour
         set;
     }
 
-    public GameObject player{
-        get;
-        set;
-    }
-
     public Queue<float> levels{
         get;
         set;
