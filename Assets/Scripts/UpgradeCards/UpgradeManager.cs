@@ -46,6 +46,11 @@ public class UpgradeManager : MonoBehaviour
         "AttackSpeed","MovementSpeed","Health","Ammo", "ReloadSpeed",
     };
 
+    private List<string> weapons = new List<string>(){
+        "Gun", "Shotgun",
+    };
+
+
     private List<GameObject> generatedUpgrades = new List<GameObject>();
 
     public static UpgradeManager Instance
@@ -63,6 +68,24 @@ public class UpgradeManager : MonoBehaviour
     private void Awake()
     {
     }
+
+    // public void GenerateWeapons()
+    // {
+    //     Queue<int> positionsX = new Queue<int>(new List<int>() { -550, 0, 550 });
+
+    //     // Generate the Upgrades
+    //     for (int i = 0; i < weapons.Count; i++)
+    //     {
+    //         GameObject canvas = GameObject.Find("UpgradeCardCanvas");
+    //         Vector3 weaponPosition = new Vector3(canvas.transform.position.x + positionsX.Dequeue(), canvas.transform.position.y, canvas.transform.position.z);
+
+    //         GameObject weaponChoice = upgradePrefab;
+    //         weaponChoice.name = weapons[i];
+    //         weaponChoice.GetComponentInChildren<TMP_Text>().text = upgradeDescription[weaponChoice.name];
+
+    //         generatedUpgrades.Add(Instantiate(weaponChoice, weaponPosition, Quaternion.identity, canvas.transform));
+    //     }
+    // }
 
     public void GenerateUpgrades()
     {

@@ -30,7 +30,7 @@ public class EnemyPredictiveShot : MonoBehaviour
             {
                 Rigidbody2D playerRB = player.GetComponent<Rigidbody2D>();
                 Vector2 playerVel = (Vector2) playerRB.velocity;            //funktioniert nicht,da playermovement über transform geregelt wird
-                Debug.Log(playerVel);
+                //Debug.Log(playerVel);
                 Vector2 futurePlayerPos = (Vector2)player.transform.position + playerVel * timeAhead;
                 Vector2 vectorToFuturePlayerPos = futurePlayerPos - (Vector2)transform.position;
 
