@@ -15,11 +15,6 @@ public class GameManager : MonoBehaviour
         set;
     }
 
-    public GameObject player{
-        get;
-        set;
-    }
-
     public Queue<float> levels{
         get;
         set;
@@ -27,6 +22,11 @@ public class GameManager : MonoBehaviour
     public float [] levelsArray{
         get;
         set;
+    }
+
+    public GameObject player{
+        get;
+        private set;
     }
 
     public float playerEXP{
@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Player spawn
-        _instance.player = Instantiate(playerPrefab, transform.position, Quaternion.identity);
+        player = Instantiate(playerPrefab, transform.position, Quaternion.identity);
         
         // Enemy Spawner spawn
         Vector3 spawnLeftBorder = new Vector3(transform.position.x - 5, transform.position.y,transform.position.z);
