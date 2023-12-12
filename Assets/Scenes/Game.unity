@@ -292,7 +292,7 @@ MonoBehaviour:
   obstaclePrefab: {fileID: 2935347866033707180, guid: b12a37709b5b2c24397be7944335780c, type: 3}
   tileZCoordinate: 0.5
   size: 32
-  obstacleNumber: 50
+  tilesPerObstacle: 20
 --- !u!1 &233839037
 GameObject:
   m_ObjectHideFlags: 0

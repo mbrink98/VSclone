@@ -29,7 +29,7 @@ public class MapManager : MonoBehaviour
 
     public int size;
 
-    [SerializeField] private int obstacleNumber;
+    [SerializeField] private int tilesPerObstacle;
 
     void Awake()
     {
@@ -41,8 +41,9 @@ public class MapManager : MonoBehaviour
     {
         System.Random rand = new System.Random();
         HashSet<int> obstaclePositions = new HashSet<int>();
-        for (int i = 0; i < obstacleNumber; i++){
-            obstaclePositions.Add(rand.Next((2*size+1)*(2*size+1)));
+        int numberOfTiles = (2*size+1)*(2*size+1);
+        for (int i = 0; i < numberOfTiles / tilesPerObstacle; i++){
+            obstaclePositions.Add(rand.Next(numberOfTiles));
         }
         for (int i = -size; i <= size; i++){
             for (int j = -size; j <= size; j++){
