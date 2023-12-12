@@ -27,7 +27,7 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] private float tileZCoordinate;
 
-    [SerializeField] private int size;
+    public int size;
 
     [SerializeField] private int obstacleNumber;
 

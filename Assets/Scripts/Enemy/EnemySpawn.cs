@@ -21,14 +21,25 @@ public class EnemySpawn : MonoBehaviour
         if (!GameManager.Instance.gameIsPaused)
         {
             pos = transform.position;
-            GameObject player = GameObject.FindWithTag("Player");
+            GameObject player = GameManager.Instance.player;
+            float mapSize = (float) MapManager.Instance.size;
             if (player != null)
             {
                 time += Time.deltaTime;
                 if (time >= SpawnTime)
                 {
                     time = time % 1f;
-                    Instantiate(enemyPrefab, new Vector2(pos.x + Random.Range(-1.5f, 1.5f), pos.y + Random.Range(-1.5f, 1.5f)), Quaternion.identity);
+                    float x = pos.x + Random.Range(-1.5f, 1.5f);
+                    float y = pos.y + Random.Range(-1.5f, 1.5f);
+                    Vector3 myPos = new Vector3(x, y, 0);
+                    while (
+                        myPos.x < -mapSize || myPos.x > mapSize ||
+                        myPos.y < -mapSize || myPos.y > mapSize ||
+                        (myPos - player.transform.position).magnitude < 3f
+                    ){
+                        myPos -= 3 * myPos.normalized;
+                    }
+                    Instantiate(enemyPrefab, myPos, Quaternion.identity);
                 }
             }
         }
