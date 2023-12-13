@@ -23,7 +23,9 @@ public class CameraMovement : MonoBehaviour
             Vector3 playerPosition = GameManager.Instance.player.transform.position;
             cameraVelocity.x += (playerPosition.x - transform.position.x) * cameraTension * Time.deltaTime;
             cameraVelocity.y += (playerPosition.y - transform.position.y) * cameraTension * Time.deltaTime;
-            transform.Translate(Time.deltaTime * cameraVelocity);
+            Vector3 movementVector = Time.deltaTime * cameraVelocity;
+            transform.Translate(movementVector);
+            MapManager.Instance.movePlanets(movementVector);
             cameraVelocity *= Mathf.Pow(cameraDampening, Time.deltaTime);
         }
     }

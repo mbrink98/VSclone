@@ -287,12 +287,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8326e1ed7ffa94eb5d194445fcb7a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: 3589926819151040292, guid: db6bd5836ba8c9e4fa65c0d113593dc6, type: 3}
+  planetPrefabs:
+  - {fileID: 7960206029177889573, guid: f118fed566113a44785cb979d88b5b0c, type: 3}
+  - {fileID: 4074513226507683221, guid: 869a1d1243797d24c8106981a16c64cf, type: 3}
+  - {fileID: 2369326695782729499, guid: 41edf5642acc3e64ab2718c4bd9d8ded, type: 3}
+  - {fileID: 3967278960644062020, guid: 6da1bf012c38c8a4291044e80aa05d8b, type: 3}
+  - {fileID: 2484043563118347262, guid: 30171ac6b8b394743be79aaa71e99522, type: 3}
+  - {fileID: 4049719905459493450, guid: 99342063d1ffda840a9dffb4995c2f58, type: 3}
+  - {fileID: 2153461358422197672, guid: 212d2464e06305b47bff13927de7d379, type: 3}
+  - {fileID: 746345347748150865, guid: 5987c3774cc6aba47860c358b73a3364, type: 3}
+  - {fileID: 5429480838667814888, guid: 83cdb60f58e89cf48a0be8af918e5dff, type: 3}
+  - {fileID: 7172094222596535696, guid: 59968d7dbfa09444cb40979234d60099, type: 3}
+  - {fileID: 7391890737928482258, guid: ff2b6e138371bb94ca30e5c142c169be, type: 3}
+  - {fileID: 2951180194275912459, guid: 3692827547c770741a0818a6f2118165, type: 3}
+  - {fileID: 584479507628858281, guid: a3acd840347680c4dac3094dd85e0ed7, type: 3}
+  - {fileID: 4157104017293050772, guid: 5691066a7c1e2544db51de8c9976bc36, type: 3}
+  - {fileID: 3745616902229434977, guid: 298091fab33179148b6c1cda8a894907, type: 3}
+  - {fileID: 4788301928962093465, guid: d4aa7b00a9556ce42b98e79c09a20bf3, type: 3}
+  - {fileID: 5429480838667814888, guid: 83cdb60f58e89cf48a0be8af918e5dff, type: 3}
+  - {fileID: 7172094222596535696, guid: 59968d7dbfa09444cb40979234d60099, type: 3}
+  - {fileID: 2153461358422197672, guid: 212d2464e06305b47bff13927de7d379, type: 3}
+  - {fileID: 4049719905459493450, guid: 99342063d1ffda840a9dffb4995c2f58, type: 3}
+  - {fileID: 746345347748150865, guid: 5987c3774cc6aba47860c358b73a3364, type: 3}
+  - {fileID: 7391890737928482258, guid: ff2b6e138371bb94ca30e5c142c169be, type: 3}
+  - {fileID: 2484043563118347262, guid: 30171ac6b8b394743be79aaa71e99522, type: 3}
+  - {fileID: 2951180194275912459, guid: 3692827547c770741a0818a6f2118165, type: 3}
+  - {fileID: 584479507628858281, guid: a3acd840347680c4dac3094dd85e0ed7, type: 3}
+  - {fileID: 3967278960644062020, guid: 6da1bf012c38c8a4291044e80aa05d8b, type: 3}
+  - {fileID: 2369326695782729499, guid: 41edf5642acc3e64ab2718c4bd9d8ded, type: 3}
+  - {fileID: 7960206029177889573, guid: f118fed566113a44785cb979d88b5b0c, type: 3}
+  - {fileID: 4074513226507683221, guid: 869a1d1243797d24c8106981a16c64cf, type: 3}
+  - {fileID: 4157104017293050772, guid: 5691066a7c1e2544db51de8c9976bc36, type: 3}
+  numberOfPlanetLayers: 20
+  tilesPerPlanet: 300
+  planetScaleFactor: 0.9
   borderPrefab: {fileID: 4345285747894494695, guid: 190900c74d1724048bfcb2612fc5c9af, type: 3}
   obstaclePrefab: {fileID: 2935347866033707180, guid: b12a37709b5b2c24397be7944335780c, type: 3}
+  nebulaPrefab: {fileID: 1577640309230996189, guid: 253b96618f701944a9aa21e1c5b9c336, type: 3}
   tileZCoordinate: 0.5
   size: 32
-  obstacleNumber: 50
+  tilesPerObstacle: 20
 --- !u!1 &233839037
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,11 +557,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1024, y: 1024}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -596,7 +630,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 21020bafb42831444b12dbae55ad37b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c74e17918b370a740b5ab2413221736e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
