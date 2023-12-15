@@ -39,6 +39,10 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] private int tilesPerObstacle;
 
+    [SerializeField] private int scaleFactorPlanets;
+
+    [SerializeField] private int scaleFactorNebula;
+
     private List<GameObject> rootPlanets = new List<GameObject>();
 
     private System.Random rand;
@@ -92,27 +96,27 @@ public class MapManager : MonoBehaviour
         for (int layer = 1; layer <= numberOfPlanetLayers; layer++, scale *= planetScaleFactor){
             Vector3 unitX = scale * Vector3.right;
             Vector3 unitY = scale * Vector3.up;
-            int sizeX = (int) (additionalSpaceX / scale) + size;
-            int sizeY = (int) (additionalSpaceY / scale) + size;
-            int numberOfScaledTiles = (2 * sizeX + 1) * (2 * sizeY + 1);
+            int sizeX = (int) (additionalSpaceX / scale) + size + 1;
+            int sizeY = (int) (additionalSpaceY / scale) + size + 1;
+            int numberOfScaledTiles = (2 * sizeX / scaleFactorPlanets + 1) * (2 * sizeY / scaleFactorPlanets + 1);
             GameObject root = Instantiate(
                 planetPrefabs[rand.Next(planetPrefabs.Length)], 
                 randomPositionOnGrid(sizeX/2, sizeY/2, scale*2, layer), 
                 Quaternion.identity);
-            root.transform.localScale *= scale;
+            root.transform.localScale *= scale * scaleFactorPlanets;
             for (int i = 1; i < numberOfScaledTiles / tilesPerPlanet; i++){
                 GameObject planet = Instantiate(
                     planetPrefabs[rand.Next(planetPrefabs.Length)], 
                     randomPositionOnGrid(sizeX/2, sizeY/2, scale*2, layer), 
                     Quaternion.identity);
-                planet.transform.localScale *= scale;
+                planet.transform.localScale *= scale * scaleFactorPlanets;
                 planet.transform.parent = root.transform;
             }
             rootPlanets.Add(root);
         }
         //Nebula
-        int maxX = size + 1 + (int) additionalSpaceX;
-        int maxY = size + 1 + (int) additionalSpaceY;
+        int maxX = (size + (int) additionalSpaceX) / scaleFactorNebula + 1;
+        int maxY = (size + (int) additionalSpaceY) / scaleFactorNebula + 1;
         int i_start = -maxX;
         int j_start = -maxY;
         while (i_start <= maxX || j_start != -maxY){
@@ -120,15 +124,16 @@ public class MapManager : MonoBehaviour
             int j = j_start;
             while (j <= maxY){
                 Vector3 pos = new Vector3(i + UnityEngine.Random.Range(-.5f, .5f), j + UnityEngine.Random.Range(-.5f, .5f), .5f);
-                Instantiate(nebulaPrefab, pos, Quaternion.identity);
+                GameObject neb = Instantiate(nebulaPrefab, pos, Quaternion.identity);
+                neb.transform.localScale *= scaleFactorNebula;
                 i += 1;
-                j += 3;
+                j += 1 + 2 * scaleFactorNebula;
             }
-            i_start += 3;
+            i_start += 1 + 2 * scaleFactorNebula;
             j_start -= 1;
             if (j_start < -maxY){
                 i_start += 1;
-                j_start += 3;
+                j_start += 1 + 2 * scaleFactorNebula;
             }
         }
         nebulaSkipBackAmount = i_start + maxX;
