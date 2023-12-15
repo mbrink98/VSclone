@@ -19,7 +19,7 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.Instance.gameIsPaused){
+        if (!GameManager.Instance.gameIsPaused && GameManager.Instance.player != null){
             Vector3 playerPosition = GameManager.Instance.player.transform.position;
             cameraVelocity.x += (playerPosition.x - transform.position.x) * cameraTension * Time.deltaTime;
             cameraVelocity.y += (playerPosition.y - transform.position.y) * cameraTension * Time.deltaTime;
