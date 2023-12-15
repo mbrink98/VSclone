@@ -318,9 +318,9 @@ MonoBehaviour:
   - {fileID: 7960206029177889573, guid: f118fed566113a44785cb979d88b5b0c, type: 3}
   - {fileID: 4074513226507683221, guid: 869a1d1243797d24c8106981a16c64cf, type: 3}
   - {fileID: 4157104017293050772, guid: 5691066a7c1e2544db51de8c9976bc36, type: 3}
-  numberOfPlanetLayers: 20
-  tilesPerPlanet: 300
-  planetScaleFactor: 0.9
+  numberOfPlanetLayers: 5
+  tilesPerPlanet: 500
+  planetScaleFactor: 1
   borderPrefab: {fileID: 4345285747894494695, guid: 190900c74d1724048bfcb2612fc5c9af, type: 3}
   obstaclePrefab: {fileID: 2935347866033707180, guid: b12a37709b5b2c24397be7944335780c, type: 3}
   nebulaPrefab: {fileID: 1577640309230996189, guid: 253b96618f701944a9aa21e1c5b9c336, type: 3}

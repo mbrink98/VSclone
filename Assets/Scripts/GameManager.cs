@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Player spawn
-        player = Instantiate(playerPrefab, transform.position, Quaternion.identity);
+        _instance.player = Instantiate(playerPrefab, transform.position, Quaternion.identity);
         
         // Enemy Spawner spawn
         Vector3 spawnLeftBorder = new Vector3(transform.position.x - 5, transform.position.y,transform.position.z);
@@ -176,8 +176,6 @@ public class GameManager : MonoBehaviour
             _instance.enemySpawner2.transform.position = topLeft;
             _instance.enemySpawner3.transform.position = topRight;
             _instance.enemySpawner4.transform.position = bottomRight;
-            Debug.Log(topLeft);
-            Debug.Log(_instance.enemySpawner1.transform.position);
         }
 
         healthBar.fillAmount = Mathf.Clamp(playerHealth/playerMaxHealth,0,1);               //könnte vllt ins playergetshitevent
