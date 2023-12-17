@@ -101,13 +101,13 @@ public class MapManager : MonoBehaviour
             int numberOfScaledTiles = (2 * sizeX / scaleFactorPlanets + 1) * (2 * sizeY / scaleFactorPlanets + 1);
             GameObject root = Instantiate(
                 planetPrefabs[rand.Next(planetPrefabs.Length)], 
-                randomPositionOnGrid(sizeX/2, sizeY/2, scale*2, layer), 
+                randomPositionOnGrid(sizeX, sizeY, scale, layer), 
                 Quaternion.identity);
             root.transform.localScale *= scale * scaleFactorPlanets;
             for (int i = 1; i < numberOfScaledTiles / tilesPerPlanet; i++){
                 GameObject planet = Instantiate(
                     planetPrefabs[rand.Next(planetPrefabs.Length)], 
-                    randomPositionOnGrid(sizeX/2, sizeY/2, scale*2, layer), 
+                    randomPositionOnGrid(sizeX, sizeY, scale, layer), 
                     Quaternion.identity);
                 planet.transform.localScale *= scale * scaleFactorPlanets;
                 planet.transform.parent = root.transform;
