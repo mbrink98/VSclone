@@ -25,7 +25,7 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] private int tilesPerPlanet;
 
-    [SerializeField] private float planetScaleFactor;
+    [SerializeField] private float planetLayerScaleQuotient;
 
     [SerializeField] private GameObject borderPrefab;
 
@@ -39,19 +39,11 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] private int tilesPerObstacle;
 
+    [SerializeField] private int scaleFactorPlanets;
+
     private List<GameObject> rootPlanets = new List<GameObject>();
 
     private System.Random rand;
-
-    public int nebulaSkipBackAmount{
-        get;
-        private set;
-    }
-
-    public float nebulaMaxX{
-        get;
-        private set;
-    }
 
     void Awake()
     {
@@ -66,14 +58,7 @@ public class MapManager : MonoBehaviour
         HashSet<int> obstaclePositions = new HashSet<int>();
         int numberOfTiles = (2*size+1)*(2*size+1);
         for (int i = 0; i < numberOfTiles / tilesPerObstacle; i++){
-            obstaclePositions.Add(rand.Next(numberOfTiles));
-        }
-        for (int i = -size; i <= size; i++){
-            for (int j = -size; j <= size; j++){
-                if (obstaclePositions.Contains( (size + i) * (2*size + 1) + size + j )){
-                    Instantiate(obstaclePrefab, new Vector3(i, j, 0), Quaternion.identity);
-                }
-            }
+            Instantiate(obstaclePrefab, randomPositionOnGrid(size, size, 1f, 0f), Quaternion.identity);
         }
         //Border
         for (int i = -size - 1; i <= size + 1; i++){
@@ -88,51 +73,28 @@ public class MapManager : MonoBehaviour
             ) - Camera.main.transform.position;
         float additionalSpaceX = cameraHalfDiagonal.x;
         float additionalSpaceY = cameraHalfDiagonal.y;
-        float scale = planetScaleFactor;
-        for (int layer = 1; layer <= numberOfPlanetLayers; layer++, scale *= planetScaleFactor){
+        float scale = planetLayerScaleQuotient;
+        for (int layer = 1; layer <= numberOfPlanetLayers; layer++, scale *= planetLayerScaleQuotient){
             Vector3 unitX = scale * Vector3.right;
             Vector3 unitY = scale * Vector3.up;
-            int sizeX = (int) (additionalSpaceX / scale) + size;
-            int sizeY = (int) (additionalSpaceY / scale) + size;
-            int numberOfScaledTiles = (2 * sizeX + 1) * (2 * sizeY + 1);
+            int sizeX = (int) (additionalSpaceX / scale) + size + 1;
+            int sizeY = (int) (additionalSpaceY / scale) + size + 1;
+            int numberOfScaledTiles = (2 * sizeX / scaleFactorPlanets + 1) * (2 * sizeY / scaleFactorPlanets + 1);
             GameObject root = Instantiate(
                 planetPrefabs[rand.Next(planetPrefabs.Length)], 
-                randomPositionOnGrid(sizeX/2, sizeY/2, scale*2, layer), 
+                randomPositionOnGrid(sizeX, sizeY, scale, layer), 
                 Quaternion.identity);
-            root.transform.localScale *= scale;
+            root.transform.localScale *= scale * scaleFactorPlanets;
             for (int i = 1; i < numberOfScaledTiles / tilesPerPlanet; i++){
                 GameObject planet = Instantiate(
                     planetPrefabs[rand.Next(planetPrefabs.Length)], 
-                    randomPositionOnGrid(sizeX/2, sizeY/2, scale*2, layer), 
+                    randomPositionOnGrid(sizeX, sizeY, scale, layer), 
                     Quaternion.identity);
-                planet.transform.localScale *= scale;
+                planet.transform.localScale *= scale * scaleFactorPlanets;
                 planet.transform.parent = root.transform;
             }
             rootPlanets.Add(root);
         }
-        //Nebula
-        int maxX = size + 1 + (int) additionalSpaceX;
-        int maxY = size + 1 + (int) additionalSpaceY;
-        int i_start = -maxX;
-        int j_start = -maxY;
-        while (i_start <= maxX || j_start != -maxY){
-            int i = i_start;
-            int j = j_start;
-            while (j <= maxY){
-                Vector3 pos = new Vector3(i + UnityEngine.Random.Range(-.5f, .5f), j + UnityEngine.Random.Range(-.5f, .5f), .5f);
-                Instantiate(nebulaPrefab, pos, Quaternion.identity);
-                i += 1;
-                j += 3;
-            }
-            i_start += 3;
-            j_start -= 1;
-            if (j_start < -maxY){
-                i_start += 1;
-                j_start += 3;
-            }
-        }
-        nebulaSkipBackAmount = i_start + maxX;
-        nebulaMaxX = maxX;
     }
 
     // Update is called once per frame
@@ -148,8 +110,8 @@ public class MapManager : MonoBehaviour
     }
 
     public void movePlanets(Vector3 cameraMovement){
-        float scale = planetScaleFactor;
-        for (int i = 0; i < numberOfPlanetLayers; i++, scale *= planetScaleFactor){
+        float scale = planetLayerScaleQuotient;
+        for (int i = 0; i < numberOfPlanetLayers; i++, scale *= planetLayerScaleQuotient){
             float factor = 1.0f - scale;
             rootPlanets[i].transform.Translate(factor * cameraMovement);
         }
