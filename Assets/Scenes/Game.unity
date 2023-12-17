@@ -327,8 +327,7 @@ MonoBehaviour:
   tileZCoordinate: 0.5
   size: 32
   tilesPerObstacle: 20
-  scaleFactorPlanets: 8
-  scaleFactorNebula: 2
+  scaleFactorPlanets: 7
 --- !u!1 &233839037
 GameObject:
   m_ObjectHideFlags: 0

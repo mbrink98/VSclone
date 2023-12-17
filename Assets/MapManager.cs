@@ -41,21 +41,9 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] private int scaleFactorPlanets;
 
-    [SerializeField] private int scaleFactorNebula;
-
     private List<GameObject> rootPlanets = new List<GameObject>();
 
     private System.Random rand;
-
-    public int nebulaSkipBackAmount{
-        get;
-        private set;
-    }
-
-    public float nebulaMaxX{
-        get;
-        private set;
-    }
 
     void Awake()
     {
@@ -107,30 +95,6 @@ public class MapManager : MonoBehaviour
             }
             rootPlanets.Add(root);
         }
-        //Nebula
-        // int maxX = (size + (int) additionalSpaceX) / scaleFactorNebula + 1;
-        // int maxY = (size + (int) additionalSpaceY) / scaleFactorNebula + 1;
-        // int i_start = -maxX;
-        // int j_start = -maxY;
-        // while (i_start <= maxX || j_start != -maxY){
-        //     int i = i_start;
-        //     int j = j_start;
-        //     while (j <= maxY){
-        //         Vector3 pos = new Vector3(i + UnityEngine.Random.Range(-.5f, .5f), j + UnityEngine.Random.Range(-.5f, .5f), .5f);
-        //         GameObject neb = Instantiate(nebulaPrefab, pos, Quaternion.identity);
-        //         neb.transform.localScale *= scaleFactorNebula;
-        //         i += 1;
-        //         j += 1 + 2 * scaleFactorNebula;
-        //     }
-        //     i_start += 1 + 2 * scaleFactorNebula;
-        //     j_start -= 1;
-        //     if (j_start < -maxY){
-        //         i_start += 1;
-        //         j_start += 1 + 2 * scaleFactorNebula;
-        //     }
-        // }
-        // nebulaSkipBackAmount = i_start + maxX;
-        // nebulaMaxX = maxX;
     }
 
     // Update is called once per frame
