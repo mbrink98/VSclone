@@ -320,7 +320,7 @@ MonoBehaviour:
   - {fileID: 4157104017293050772, guid: 5691066a7c1e2544db51de8c9976bc36, type: 3}
   numberOfPlanetLayers: 20
   tilesPerPlanet: 300
-  planetScaleFactor: 0.9
+  planetLayerScaleQuotient: 0.9
   borderPrefab: {fileID: 4345285747894494695, guid: 190900c74d1724048bfcb2612fc5c9af, type: 3}
   obstaclePrefab: {fileID: 2935347866033707180, guid: b12a37709b5b2c24397be7944335780c, type: 3}
   nebulaPrefab: {fileID: 0}

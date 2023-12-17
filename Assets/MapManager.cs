@@ -25,7 +25,7 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] private int tilesPerPlanet;
 
-    [SerializeField] private float planetScaleFactor;
+    [SerializeField] private float planetLayerScaleQuotient;
 
     [SerializeField] private GameObject borderPrefab;
 
@@ -70,14 +70,7 @@ public class MapManager : MonoBehaviour
         HashSet<int> obstaclePositions = new HashSet<int>();
         int numberOfTiles = (2*size+1)*(2*size+1);
         for (int i = 0; i < numberOfTiles / tilesPerObstacle; i++){
-            obstaclePositions.Add(rand.Next(numberOfTiles));
-        }
-        for (int i = -size; i <= size; i++){
-            for (int j = -size; j <= size; j++){
-                if (obstaclePositions.Contains( (size + i) * (2*size + 1) + size + j )){
-                    Instantiate(obstaclePrefab, new Vector3(i, j, 0), Quaternion.identity);
-                }
-            }
+            Instantiate(obstaclePrefab, randomPositionOnGrid(size, size, 1f, 0f), Quaternion.identity);
         }
         //Border
         for (int i = -size - 1; i <= size + 1; i++){
@@ -92,8 +85,8 @@ public class MapManager : MonoBehaviour
             ) - Camera.main.transform.position;
         float additionalSpaceX = cameraHalfDiagonal.x;
         float additionalSpaceY = cameraHalfDiagonal.y;
-        float scale = planetScaleFactor;
-        for (int layer = 1; layer <= numberOfPlanetLayers; layer++, scale *= planetScaleFactor){
+        float scale = planetLayerScaleQuotient;
+        for (int layer = 1; layer <= numberOfPlanetLayers; layer++, scale *= planetLayerScaleQuotient){
             Vector3 unitX = scale * Vector3.right;
             Vector3 unitY = scale * Vector3.up;
             int sizeX = (int) (additionalSpaceX / scale) + size + 1;
@@ -153,8 +146,8 @@ public class MapManager : MonoBehaviour
     }
 
     public void movePlanets(Vector3 cameraMovement){
-        float scale = planetScaleFactor;
-        for (int i = 0; i < numberOfPlanetLayers; i++, scale *= planetScaleFactor){
+        float scale = planetLayerScaleQuotient;
+        for (int i = 0; i < numberOfPlanetLayers; i++, scale *= planetLayerScaleQuotient){
             float factor = 1.0f - scale;
             rootPlanets[i].transform.Translate(factor * cameraMovement);
         }
