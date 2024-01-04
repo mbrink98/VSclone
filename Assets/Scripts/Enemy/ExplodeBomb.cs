@@ -21,7 +21,6 @@ public class ExplodeBomb : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-                Debug.Log(time);
             if (time >= fuseTime){
                 Explode();
             }

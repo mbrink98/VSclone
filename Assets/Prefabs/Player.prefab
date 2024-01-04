@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9103344293081546991}
   - component: {fileID: 1402624700246608770}
-  - component: {fileID: 7096836787368654743}
+  - component: {fileID: 8566468399565664992}
   - component: {fileID: -9167387882254606483}
   - component: {fileID: 7480577207314539070}
   - component: {fileID: -7451824631191529134}
@@ -93,8 +93,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7096836787368654743
-BoxCollider2D:
+--- !u!60 &8566468399565664992
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,7 +125,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.24000001}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: -0.42307693}
@@ -135,9 +135,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.26}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.07970836, y: 0.262993}
+      - {x: -0.15290716, y: 0.19092834}
+      - {x: -0.15218037, y: 0.1281698}
+      - {x: -0.03457151, y: 0.16596296}
+      - {x: -0.033385444, y: 0.11025069}
+      - {x: 0.033026755, y: 0.11014997}
+      - {x: 0.030844033, y: 0.16969101}
+      - {x: 0.15072678, y: 0.124535844}
+      - {x: 0.15363395, y: 0.18822266}
+      - {x: 0.083703436, y: 0.2565651}
+      - {x: 0.008975908, y: 0.37654114}
+      - {x: -0.010026433, y: 0.37654114}
+      - {x: -0.04200528, y: 0.3323819}
+  m_UseDelaunayMesh: 0
 --- !u!50 &-9167387882254606483
 Rigidbody2D:
   serializedVersion: 4
@@ -344,7 +357,6 @@ GameObject:
   - component: {fileID: 2651031953575118330}
   - component: {fileID: 568814467204297183}
   - component: {fileID: 8343341003796271103}
-  - component: {fileID: 7794761932612657908}
   m_Layer: 0
   m_Name: ShootBox
   m_TagString: Untagged
@@ -432,100 +444,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4613368987487835546, guid: cc1de7d76e1ea13459b9e1ea53d2c61a, type: 3}
-  laserPrefab: {fileID: 6047264249790787164, guid: f1e7c24ae4abdd34fb166d458f3a0edf, type: 3}
---- !u!82 &7794761932612657908
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8020408747005158222}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  laserPrefab: {fileID: 4613368987487835546, guid: 2a5418a6abf01f243a9ff36b8159d9ad, type: 3}

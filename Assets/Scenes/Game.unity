@@ -725,7 +725,7 @@ Transform:
   m_GameObject: {fileID: 596951258}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.194203, y: -0.84277153, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -895,8 +895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb89c0bc1b7a4f449b8845bb6136a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTension: 10
-  cameraDampening: 0.2
+  cameraTension: 15
+  cameraDampening: 0.01
 --- !u!224 &1079179067 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 790032684916084189, guid: 54812a931f9c60249a758fc1e7c239a3, type: 3}
@@ -1335,6 +1335,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 200765927}
   m_SourcePrefab: {fileID: 100100000, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
+--- !u!114 &1821911693 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 578607040598609506, guid: 54812a931f9c60249a758fc1e7c239a3, type: 3}
+  m_PrefabInstance: {fileID: 8430885413124152445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99ce33b221cfed4a9cf994c8604bbab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1967896499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,6 +1572,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1292015820}
     - target: {fileID: 5156330874164434379, guid: 883a095ae03331d4da54e2a7171762a3, type: 3}
+      propertyPath: laserCharge
+      value: 
+      objectReference: {fileID: 8300000, guid: c65739f573b88a34c9191f4cc4f34c84, type: 3}
+    - target: {fileID: 5156330874164434379, guid: 883a095ae03331d4da54e2a7171762a3, type: 3}
       propertyPath: playerShoot
       value: 
       objectReference: {fileID: 8300000, guid: 77bf104a917704b4da38e6cc406eaf3a, type: 3}
@@ -1612,6 +1627,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 292227120}
     - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
+      propertyPath: upgradePrefab
+      value: 
+      objectReference: {fileID: 7343264499187067524, guid: b9b5fa036f96f5a40922704dffc3219f, type: 3}
+    - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
       propertyPath: enemySpawnerPrefab
       value: 
       objectReference: {fileID: 5703956936719178411, guid: 2049b425cab9e6c4e862352ddb3482c9, type: 3}
@@ -1620,9 +1639,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
+      propertyPath: selectWeaponEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
+      propertyPath: selectWeaponEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
       propertyPath: gameManagerStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
+      propertyPath: selectWeaponEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1821911693}
     - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
       propertyPath: gameManagerInit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1636,16 +1667,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 578607040598609506, guid: 54812a931f9c60249a758fc1e7c239a3, type: 3}
     - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
+      propertyPath: selectWeaponEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
       propertyPath: gameManagerStarted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
+      propertyPath: selectWeaponEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GenerateWeapons
       objectReference: {fileID: 0}
     - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
       propertyPath: gameManagerStarted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: followPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
+      propertyPath: selectWeaponEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
       propertyPath: gameManagerStarted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CameraFollowPlayer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
+      propertyPath: selectWeaponEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
       propertyPath: gameManagerStarted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1802,6 +1849,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1077578427}
+  - {fileID: 596951260}
   - {fileID: 1967896501}
   - {fileID: 412238878}
   - {fileID: 1970033256}
@@ -1809,4 +1857,3 @@ SceneRoots:
   - {fileID: 84398371563697732}
   - {fileID: 233839041}
   - {fileID: 1756446429}
-  - {fileID: 596951260}

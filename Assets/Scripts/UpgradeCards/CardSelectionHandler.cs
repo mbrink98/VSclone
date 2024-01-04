@@ -19,16 +19,24 @@ public class CardSelectionHandler : MonoBehaviour, IPointerEnterHandler, IPointe
     private Vector3 _startScale;
 
     [System.Serializable]
-    public class UpgradeChoosen : UnityEvent<string> { }
+    public class UpgradeChoosen : UnityEvent<string> {}
+
+    [System.Serializable]
+    public class WeaponChoosen: UnityEvent<string> { }
 
     public UpgradeChoosen upgradeChoosen;
+    public WeaponChoosen weaponChoosen;
 
     void Start()
     {
         _startPos = transform.position;
         _startScale = transform.localScale;
 
-        GetComponent<Button>().onClick.AddListener(UpgradeClicked);
+        if (gameObject.name.Contains("Upgrade")) {
+            GetComponent<Button>().onClick.AddListener(UpgradeClicked);
+        } else if (gameObject.name.Contains("Weapon")){
+            GetComponent<Button>().onClick.AddListener(WeaponClicked);
+        }        
     }
 
     private IEnumerator MoveCard(bool startingAnimation)
@@ -89,6 +97,13 @@ public class CardSelectionHandler : MonoBehaviour, IPointerEnterHandler, IPointe
 
     void UpgradeClicked()
     {
-        upgradeChoosen.Invoke(gameObject.name);
+        name = gameObject.name.Split('-')[1];
+        upgradeChoosen.Invoke(name.Substring(0, gameObject.name.IndexOf('(')));
+    }
+
+    void WeaponClicked()
+    {
+        name = gameObject.name.Split('-')[1];
+        weaponChoosen.Invoke(name.Substring(0, gameObject.name.IndexOf('(')));
     }
 }

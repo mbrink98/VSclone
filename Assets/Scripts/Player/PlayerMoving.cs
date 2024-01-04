@@ -12,8 +12,7 @@ public class PlayerMoving : MonoBehaviour
 
     void Awake()
     {
-        GameManager.Instance.playerMovementSpeed = 2.5f;
-        GameManager.Instance.playerRotationSpeed = 100f;
+
     }
 
     // Update is called once per frame

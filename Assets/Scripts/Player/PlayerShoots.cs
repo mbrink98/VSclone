@@ -1,5 +1,3 @@
-
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +6,7 @@ public class PlayerShoots : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject laserPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +14,7 @@ public class PlayerShoots : MonoBehaviour
 
     void Awake()
     {
-        GameManager.Instance.playerBulletSpeed = 10f;
-        GameManager.Instance.playerAttackDelay = 0.3f;
-        GameManager.Instance.playerAmmo = 5f;
-        GameManager.Instance.playerMaxAmmo = 3f;
-        GameManager.Instance.playerReloadSpeed = 2f;
+
     }
 
     float elapsed = 0f;
@@ -30,8 +25,19 @@ public class PlayerShoots : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && GameManager.Instance.playerAmmo > 0)
             {
-                StartCoroutine(Shotgun());
-            }
+                switch (GameManager.Instance.playerGun)
+                {
+                    case "Gun":
+                        StartCoroutine(Shoot());
+                        break;
+                    case "Shotgun":
+                        StartCoroutine(Shotgun());
+                        break;
+                    case "Laser":
+                        StartCoroutine(Laser());
+                        break;
+                }
+            }   
 
 
             elapsed += Time.deltaTime;
@@ -51,13 +57,12 @@ public class PlayerShoots : MonoBehaviour
         Vector2 mousePositionScreen = Input.mousePosition;
         Vector2 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
         GameManager.Instance.playerAmmo -= 1;
-        // yield return new WaitForSeconds(GameManager.Instance.playerAttackDelay); // for charge shot
         yield return new WaitForSeconds(0);
 
         Vector2 vectorToMouse = mousePositionWorld - (Vector2)transform.position;
 
         //spawn bullet to travel along vector
-        SoundManager.Instance.playPlayerShoot("Gun");
+        StartCoroutine(SoundManager.Instance.PlayPlayerShoot("Gun"));
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(vectorToMouse.normalized * GameManager.Instance.playerBulletSpeed, ForceMode2D.Impulse);
@@ -72,8 +77,8 @@ public class PlayerShoots : MonoBehaviour
         yield return new WaitForSeconds(0);
 
         Vector2 vectorToMouse = mousePositionWorld - (Vector2)transform.position;
-        int bulletCount = 3;
-        SoundManager.Instance.playPlayerShoot("Shotgun");
+        int bulletCount = 5;
+        StartCoroutine(SoundManager.Instance.PlayPlayerShoot("Shotgun"));
 
         for (int i = 0; i < bulletCount; i++)
         {
@@ -90,17 +95,25 @@ public class PlayerShoots : MonoBehaviour
 
     IEnumerator Laser() // not working
     {
+        GameManager.Instance.playerAmmo -= 1;
+        StartCoroutine(SoundManager.Instance.PlayPlayerShoot("LaserCharge"));
+        yield return new WaitForSeconds(GameManager.Instance.playerAttackDelay); // for charge shot
         Vector2 mousePositionScreen = Input.mousePosition;
         Vector2 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
-        GameManager.Instance.playerAmmo -= 1;
-        yield return new WaitForSeconds(0);
 
         Vector2 vectorToMouse = mousePositionWorld - (Vector2)transform.position;
-        SoundManager.Instance.playPlayerShoot("Laser");
+        StartCoroutine(SoundManager.Instance.PlayPlayerShoot("Laser"));
 
-        GameObject bullet = Instantiate(laserPrefab, transform.position , new Quaternion());
-        bullet.transform.GetChild(0).transform.position = (Vector2)transform.position;
+        GameObject bullet = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+        
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(vectorToMouse.normalized * GameManager.Instance.playerBulletSpeed, ForceMode2D.Impulse);
+        bullet.transform.right = vectorToMouse.normalized;
+
+        // GameObject bullet = Instantiate(laserPrefab, transform.position , new Quaternion());
+        // bullet.transform.GetChild(0).transform.position = (Vector2)transform.position;
     }
+
 
     void Reload()
     {

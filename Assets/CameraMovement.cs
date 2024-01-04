@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
@@ -21,6 +22,10 @@ public class CameraMovement : MonoBehaviour
     {
         if (!GameManager.Instance.gameIsPaused && GameManager.Instance.player != null){
             Vector3 playerPosition = GameManager.Instance.player.transform.position;
+            // if (GameManager.Instance.player == null)
+            // {
+            //     return;
+            // }
             cameraVelocity.x += (playerPosition.x - transform.position.x) * cameraTension * Time.deltaTime;
             cameraVelocity.y += (playerPosition.y - transform.position.y) * cameraTension * Time.deltaTime;
             Vector3 movementVector = Time.deltaTime * cameraVelocity;

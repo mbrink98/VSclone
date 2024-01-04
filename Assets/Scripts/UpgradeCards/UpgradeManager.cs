@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using static UnityEngine.Random;
 using UnityEngine.Events;
 using Unity.VisualScripting;
+using System;
 
 // To Add an Upgrade just add the entries in dictionaries and the switch case + 
 // add an Image with upgradeImage as name + chagne upgradeNames variable name once???
@@ -46,10 +47,6 @@ public class UpgradeManager : MonoBehaviour
         "AttackSpeed","MovementSpeed","Health","Ammo", "ReloadSpeed",
     };
 
-    private List<string> weapons = new List<string>(){
-        "Gun", "Shotgun",
-    };
-
 
     private List<GameObject> generatedUpgrades = new List<GameObject>();
 
@@ -67,28 +64,16 @@ public class UpgradeManager : MonoBehaviour
 
     private void Awake()
     {
+        _instance = this;
     }
 
-    // public void GenerateWeapons()
-    // {
-    //     Queue<int> positionsX = new Queue<int>(new List<int>() { -550, 0, 550 });
-
-    //     // Generate the Upgrades
-    //     for (int i = 0; i < weapons.Count; i++)
-    //     {
-    //         GameObject canvas = GameObject.Find("UpgradeCardCanvas");
-    //         Vector3 weaponPosition = new Vector3(canvas.transform.position.x + positionsX.Dequeue(), canvas.transform.position.y, canvas.transform.position.z);
-
-    //         GameObject weaponChoice = upgradePrefab;
-    //         weaponChoice.name = weapons[i];
-    //         weaponChoice.GetComponentInChildren<TMP_Text>().text = upgradeDescription[weaponChoice.name];
-
-    //         generatedUpgrades.Add(Instantiate(weaponChoice, weaponPosition, Quaternion.identity, canvas.transform));
-    //     }
-    // }
+    void Start()
+    {
+    }
 
     public void GenerateUpgrades()
     {
+
         Queue<int> positionsX = new Queue<int>(new List<int>() { -550, 0, 550 });
         List<string> upgrades = new List<string>();
         
@@ -109,12 +94,12 @@ public class UpgradeManager : MonoBehaviour
             Vector3 upgradePosition = new Vector3(canvas.transform.position.x + positionsX.Dequeue(), canvas.transform.position.y, canvas.transform.position.z);
 
             GameObject upgrade = upgradePrefab;
-            upgrade.name = upgrades[i];
-            Sprite upgradeSprite = Resources.Load<Sprite>("Sprites/" + upgradeImage[upgrade.name]);
+            upgrade.name = "Upgrade-"+ upgrades[i];
+            Sprite upgradeSprite = Resources.Load<Sprite>("Sprites/" + upgradeImage[upgrades[i]]);
             upgrade.GetComponent<Image>().sprite = upgradeSprite;
-            upgrade.GetComponentInChildren<TMP_Text>().text = upgradeDescription[upgrade.name];
+            upgrade.GetComponentInChildren<TMP_Text>().text = upgradeDescription[upgrades[i]];
 
-            generatedUpgrades.Add(Instantiate(upgrade, upgradePosition, Quaternion.identity, canvas.transform));
+            _instance.generatedUpgrades.Add(Instantiate(upgrade, upgradePosition, Quaternion.identity, canvas.transform));
         }
     }
 
@@ -122,13 +107,13 @@ public class UpgradeManager : MonoBehaviour
     {
         for (int i = 0; i < generatedUpgrades.Count; i++)
         {
+            Debug.Log("Destroy: " + generatedUpgrades[i]);
             Destroy(generatedUpgrades[i]);
         }
     }
 
     public void UpgradeChosen(string upgradeName)
     {
-        upgradeName = upgradeName.Substring(0, upgradeName.IndexOf('('));
 
         switch (upgradeName)
         {
@@ -151,6 +136,8 @@ public class UpgradeManager : MonoBehaviour
         }
         GameManager.Instance.playerHealth = GameManager.Instance.playerMaxHealth;
         GameManager.Instance.playerAmmo = GameManager.Instance.playerMaxAmmo;
+
+        _instance.DestroyUpgrades();
     }
 }
 
