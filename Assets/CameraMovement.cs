@@ -20,7 +20,7 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.Instance.gameIsPaused){
+        if (!GameManager.Instance.gameIsPaused && GameManager.Instance.player != null){
             Vector3 playerPosition = GameManager.Instance.player.transform.position;
             // if (GameManager.Instance.player == null)
             // {

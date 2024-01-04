@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Increase Ammo
+  m_text: Decrease Reloadtime
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a9f448be54c59b743b46685ee60255d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a9b27203fdf76204c9895171fc10f922, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -288,18 +288,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 578607040598609506, guid: 54812a931f9c60249a758fc1e7c239a3, type: 3}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: DestroyUpgrades
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: g
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 578607040598609506, guid: 54812a931f9c60249a758fc1e7c239a3, type: 3}
-        m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
         m_MethodName: UpgradeChosen
         m_Mode: 0
         m_Arguments:
@@ -307,6 +295,33 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: g
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  weaponChoosen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7909824329601601946, guid: 68570e4fe1f6a524cb3161aa8fa0ba3f, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: WeaponChosen
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7480577207314539070, guid: 59ed31efa6d9073428784c55bb73ef39, type: 3}
+        m_TargetAssemblyTypeName: PlayerShoots, Assembly-CSharp
+        m_MethodName: updateGun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2

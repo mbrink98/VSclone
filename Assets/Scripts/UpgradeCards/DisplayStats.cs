@@ -22,7 +22,8 @@ public class DisplayStats : MonoBehaviour
             $"MovementSpeed:{GameManager.Instance.playerMovementSpeed}\n" +
             $"Ammo:{GameManager.Instance.playerAmmo}\n" +
             $"ReloadLength:{GameManager.Instance.playerReloadSpeed}\n" +
-            $"AttackDelay:{GameManager.Instance.playerAttackDelay}\n"
+            $"AttackDelay:{GameManager.Instance.playerAttackDelay}\n" +
+            $"EnemyMaxHealth:{GameManager.Instance.enemyMaxHealth}\n"
         ;
     }
 }

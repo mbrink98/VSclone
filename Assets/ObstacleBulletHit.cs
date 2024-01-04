@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class ObstacleBulletHit : MonoBehaviour
 {
-    private HashSet<string> collidingTags;
+    private HashSet<string> collidingTags = new HashSet<string>();
     // Start is called before the first frame update
     void Start()
     {
-        collidingTags = new HashSet<string>();
         collidingTags.Add("PlayerBullet");
         collidingTags.Add("EnemyBullet");
     }
@@ -23,5 +22,6 @@ public class ObstacleBulletHit : MonoBehaviour
         if (collidingTags.Contains(collision.gameObject.tag)){
             Destroy(collision.gameObject);
         }
+
     }
 }

@@ -18,8 +18,6 @@ public class Hit : MonoBehaviour
 
     void Awake()
     {
-        GameManager.Instance.playerMaxHealth = 7;
-        GameManager.Instance.playerHealth = 7;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

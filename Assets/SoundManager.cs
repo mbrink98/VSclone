@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip gunShot;
     [SerializeField] private AudioClip shotgunShot;
     [SerializeField] private AudioClip laserShot;
+    [SerializeField] private AudioClip laserCharge;
     public float backgroundVolume=0.3f;
     public float soundeffectVolume=0.3f;
 
@@ -35,6 +36,7 @@ public class SoundManager : MonoBehaviour
         this.backgroundPlayer.loop = true;
         this.backgroundPlayer.clip = backgroundMusic;
         this.backgroundPlayer.volume = backgroundVolume;
+        this.soundEffectPlayer.volume = soundeffectVolume;
        _instance = this;
     }
 
@@ -50,7 +52,7 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    public void playPlayerShoot(string type)
+    public IEnumerator PlayPlayerShoot(string type)
     {
         switch (type)
         {
@@ -62,6 +64,12 @@ public class SoundManager : MonoBehaviour
             break;
         case "Laser":
             soundEffectPlayer.PlayOneShot(laserShot, soundeffectVolume);
+            break;
+        case "LaserCharge":
+            soundEffectPlayer.clip = laserCharge;
+            soundEffectPlayer.Play();
+            yield return new WaitForSeconds(GameManager.Instance.playerAttackDelay);
+            soundEffectPlayer.Stop();
             break;
         default:
             break;
