@@ -68,6 +68,7 @@ public class MapManager : MonoBehaviour
             Instantiate(borderPrefab, new Vector3(-size-1, i, 0), Quaternion.identity);
         }
         //Planets
+        Instantiate(planetPrefabs[14], new Vector3(0f, 0f, 0f), Quaternion.identity);
         Vector3 cameraHalfDiagonal = Camera.main.ScreenToWorldPoint(
             new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight, 0)
             ) - Camera.main.transform.position;
