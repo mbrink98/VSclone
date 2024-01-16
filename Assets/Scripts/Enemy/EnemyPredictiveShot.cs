@@ -38,7 +38,7 @@ public class EnemyPredictiveShot : MonoBehaviour
 
                 if (attackSpeed < time)
                 {
-                    time = 0;
+                    time -= attackSpeed;
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                     Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                     rb.AddForce(vectorToFuturePlayerPos.normalized * bulletSpeed, ForceMode2D.Impulse);

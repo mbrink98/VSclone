@@ -12,9 +12,13 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.6
       objectReference: {fileID: 0}
+    - target: {fileID: -4444873765280516519, guid: 404dffec099290644ad49278da6dd885, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -3858628950906148872, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -669533193763256575, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_Mass
@@ -50,11 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2550783080174985551, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 2550783080174985551, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 2550783080174985551, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_LocalScale.z
@@ -118,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3493521843329166236, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_Intensity
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3493521843329166236, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_LightType
@@ -126,11 +130,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3493521843329166236, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_FalloffIntensity
-      value: 0.782
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3493521843329166236, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3493521843329166236, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
@@ -147,6 +151,10 @@ PrefabInstance:
     - target: {fileID: 3493521843329166236, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
       value: 0.99853027
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493521843329166236, guid: 404dffec099290644ad49278da6dd885, type: 3}
+      propertyPath: m_LightVolumeIntensityEnabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8646993100403181655, guid: 404dffec099290644ad49278da6dd885, type: 3}
       propertyPath: m_Name
