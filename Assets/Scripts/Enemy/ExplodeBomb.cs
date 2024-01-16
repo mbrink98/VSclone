@@ -23,6 +23,7 @@ public class ExplodeBomb : MonoBehaviour
         time += Time.deltaTime;
             if (time >= fuseTime){
                 Explode();
+                Debug.Log("exploded");
             }
     }
     private void OnDrawGizmos(){

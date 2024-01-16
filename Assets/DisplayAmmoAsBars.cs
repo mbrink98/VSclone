@@ -35,8 +35,7 @@ public class DisplayAmmoAsBars : MonoBehaviour
     void Update()
     {
         chargeBar.fillAmount = Mathf.Clamp(gameManager.playerAmmo/gameManager.playerMaxAmmo,0,1);
-        Debug.Log("maxammo: "+ gameManager.playerMaxAmmo);
-        Debug.Log("ammo: "+ gameManager.playerAmmo);
+       
         /**
         int counter = 0;
         foreach (Image bar in Bars){
