@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Hit : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class Hit : MonoBehaviour
             GameManager.Instance.playerHealth--;
             if (GameManager.Instance.playerHealth == 0) {
                 Destroy(gameObject);
+                GameManager.Instance.gameOver();
             }
         }
     }

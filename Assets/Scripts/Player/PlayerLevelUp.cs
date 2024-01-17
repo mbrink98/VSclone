@@ -27,12 +27,14 @@ public class PlayerLevelUp : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "EXP") {
-            GameManager.Instance.playerEXP++;
+            GameManager gm = GameManager.Instance;
+            gm.playerEXP++;
             // if (GameManager.Instance.playerEXP >= GameManager.Instance.levelsArray[(int) GameManager.Instance.playerLVL]) {
-                if (GameManager.Instance.playerEXP >= GameManager.Instance.levels.Peek()) {
-                    GameManager.Instance.levels.Dequeue();
-                    GameManager.Instance.playerLVL++;
-                    GameManager.Instance.playerEXP = 0;         //vllt geht beim lvlup überschüssige ep verloren
+                if (gm.playerEXP >= GameManager.Instance.levels.Peek()) {
+                    float xp = gm.levels.Dequeue();
+                    gm.playerLVL++;
+                    gm.playerEXP -= xp;
+                    gm.score += (int)xp;
                     playerLevelUpEvent.Invoke();
                     // Debug.Log("LVL: "+ GameManager.Instance.levels.Peek());
                // if (GameManager.Instance.levels.Count != 0) {                 //habs auf Array umgestellt, hoffe es gibt keine bugs 

@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
         set;
     }
 
+    public int score{
+        get;
+        set;
+    }
+
     public float playerHealth
     {
         get;
@@ -126,6 +131,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent playerUpgradeEvent;
     public UnityEvent gameManagerInit;
     public UnityEvent gameManagerStarted;
+    public UnityEvent gameOverEvent;
 
     public Image healthBar;
     public Image ExpBar;
@@ -184,6 +190,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        score = 0;
         // Player spawn
         _instance.player = Instantiate(playerPrefab, transform.position, Quaternion.identity);
         GenerateWeapons();
@@ -331,6 +338,12 @@ public class GameManager : MonoBehaviour
     public void UpgradeChosen()
     {
         _instance.gameIsPaused = false;
+    }
+
+    public void gameOver(){
+        _instance.gameIsPaused = true;
+        score += (int) playerEXP;
+        gameOverEvent.Invoke();
     }
 
 }
