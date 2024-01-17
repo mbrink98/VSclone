@@ -33,6 +33,7 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] private GameObject nebulaPrefab;
 
+    public GameObject sun;
     [SerializeField] private float tileZCoordinate;
 
     public int size;
@@ -68,6 +69,8 @@ public class MapManager : MonoBehaviour
             Instantiate(borderPrefab, new Vector3(-size-1, i, 0), Quaternion.identity);
         }
         //Planets
+        Instantiate(sun, new Vector3(0f, 0f, 0f), Quaternion.identity);       //add sun in the middle
+
         Vector3 cameraHalfDiagonal = Camera.main.ScreenToWorldPoint(
             new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight, 0)
             ) - Camera.main.transform.position;
@@ -80,18 +83,25 @@ public class MapManager : MonoBehaviour
             int sizeX = (int) (additionalSpaceX / scale) + size + 1;
             int sizeY = (int) (additionalSpaceY / scale) + size + 1;
             int numberOfScaledTiles = (2 * sizeX / scaleFactorPlanets + 1) * (2 * sizeY / scaleFactorPlanets + 1);
+            
+        
             GameObject root = Instantiate(
+                
                 planetPrefabs[rand.Next(planetPrefabs.Length)], 
                 randomPositionOnGrid(sizeX, sizeY, scale, layer), 
                 Quaternion.identity);
+                
+                
             root.transform.localScale *= scale * scaleFactorPlanets;
             for (int i = 1; i < numberOfScaledTiles / tilesPerPlanet; i++){
+              
                 GameObject planet = Instantiate(
                     planetPrefabs[rand.Next(planetPrefabs.Length)], 
                     randomPositionOnGrid(sizeX, sizeY, scale, layer), 
                     Quaternion.identity);
                 planet.transform.localScale *= scale * scaleFactorPlanets;
                 planet.transform.parent = root.transform;
+                
             }
             rootPlanets.Add(root);
         }

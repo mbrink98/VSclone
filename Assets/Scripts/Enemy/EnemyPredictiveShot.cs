@@ -28,6 +28,7 @@ public class EnemyPredictiveShot : MonoBehaviour
             GameObject player = GameObject.FindWithTag("Player");
             if (player != null)
             {
+                time += Time.deltaTime;
                 Rigidbody2D playerRB = player.GetComponent<Rigidbody2D>();
                 Vector2 playerVel = (Vector2) playerRB.velocity;            //funktioniert nicht,da playermovement über transform geregelt wird
                 //Debug.Log(playerVel);
@@ -37,14 +38,14 @@ public class EnemyPredictiveShot : MonoBehaviour
 
                 if (attackSpeed < time)
                 {
-                    time = 0;
+                    time -= attackSpeed;
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
                     Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                     rb.AddForce(vectorToFuturePlayerPos.normalized * bulletSpeed, ForceMode2D.Impulse);
 
                     Destroy(bullet, 10f);         //destroy bullet after 10s  //add image that shows cannonballs impact in water
                 }
-                time += Time.deltaTime;
+                
             }
         }
     }
