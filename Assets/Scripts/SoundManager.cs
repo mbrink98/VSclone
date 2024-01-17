@@ -16,6 +16,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip shotgunShot;
     [SerializeField] private AudioClip laserShot;
     [SerializeField] private AudioClip laserCharge;
+    [SerializeField] private AudioClip explosion;
     public float backgroundVolume=0.3f;
     public float soundeffectVolume=0.3f;
 
@@ -78,10 +79,14 @@ public class SoundManager : MonoBehaviour
     }
     public void playEnemyHit()
     {
-        soundEffectPlayer.PlayOneShot(enemyHit, soundeffectVolume);
+        soundEffectPlayer.PlayOneShot(enemyHit, soundeffectVolume+1f);
     }
     public void playExpHit()
     {
         soundEffectPlayer.PlayOneShot(expHit, soundeffectVolume);
+    }
+    public void playExplosion()
+    {
+        soundEffectPlayer.PlayOneShot(explosion, soundeffectVolume);
     }
 }

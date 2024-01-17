@@ -408,7 +408,7 @@ MonoBehaviour:
   tilesPerPlanet: 300
   planetLayerScaleQuotient: 0.9
   borderPrefab: {fileID: 4345285747894494695, guid: 190900c74d1724048bfcb2612fc5c9af, type: 3}
-  obstaclePrefab: {fileID: 2935347866033707180, guid: b12a37709b5b2c24397be7944335780c, type: 3}
+  obstaclePrefab: {fileID: 2542131615711589377, guid: ae3922739968ffe4a9cfa6fa540ca8a6, type: 3}
   nebulaPrefab: {fileID: 0}
   sun: {fileID: 3745616902229434977, guid: 298091fab33179148b6c1cda8a894907, type: 3}
   tileZCoordinate: 0.5
@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 292227121}
   - component: {fileID: 292227120}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HeathBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1165,6 +1165,7 @@ GameObject:
   - component: {fileID: 1077578424}
   - component: {fileID: 1077578428}
   - component: {fileID: 1077578429}
+  - component: {fileID: 1077578432}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1317,6 +1318,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTension: 15
   cameraDampening: 0.01
+--- !u!114 &1077578432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077578423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87599f796f49d0f4e9a7a4c837425cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1079179067 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 790032684916084189, guid: 54812a931f9c60249a758fc1e7c239a3, type: 3}
@@ -1877,6 +1890,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: c8db8f8b779e0c34e929dec9434e5d92, type: 3}
     - target: {fileID: 5156330874164434379, guid: 883a095ae03331d4da54e2a7171762a3, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 8300000, guid: 601349e56fe08d54db234ed4cfc43845, type: 3}
+    - target: {fileID: 5156330874164434379, guid: 883a095ae03331d4da54e2a7171762a3, type: 3}
       propertyPath: laserShot
       value: 
       objectReference: {fileID: 8300000, guid: ea9133a9df16cc04694ef3287a67bdb7, type: 3}
@@ -1899,7 +1916,7 @@ PrefabInstance:
     - target: {fileID: 5156330874164434379, guid: 883a095ae03331d4da54e2a7171762a3, type: 3}
       propertyPath: backgroundMusic
       value: 
-      objectReference: {fileID: 8300000, guid: a3a42e8a508d90a4c9af7024dbc241cb, type: 3}
+      objectReference: {fileID: 8300000, guid: 9faba52a50d20314aae0024a80fb4d88, type: 3}
     - target: {fileID: 5156330874164434379, guid: 883a095ae03331d4da54e2a7171762a3, type: 3}
       propertyPath: backgroundPlayer
       value: 
@@ -1908,6 +1925,10 @@ PrefabInstance:
       propertyPath: soundEffectPlayer
       value: 
       objectReference: {fileID: 1292015823}
+    - target: {fileID: 5156330874164434379, guid: 883a095ae03331d4da54e2a7171762a3, type: 3}
+      propertyPath: soundeffectVolume
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7826151331116899749, guid: 883a095ae03331d4da54e2a7171762a3, type: 3}
       propertyPath: m_Name
       value: SoundManager
