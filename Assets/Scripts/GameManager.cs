@@ -245,7 +245,8 @@ public class GameManager : MonoBehaviour
     public void GenerateWeapons()
     {
         _instance.gameIsPaused = true;
-        Queue<int> positionsX = new Queue<int>(new List<int>() { -550, 0, 550 });
+        int screen = Screen.width/2;
+        Queue<int> positionsX = new Queue<int>(new List<int>() { screen*-1 + screen/2, 0, screen - screen/2 });
 
         // Generate the Upgrades
         for (int i = 0; i < weapons.Count; i++)

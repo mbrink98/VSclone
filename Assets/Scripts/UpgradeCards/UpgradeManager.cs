@@ -86,8 +86,8 @@ public class UpgradeManager : MonoBehaviour
 
     public void GenerateUpgrades()
     {
-
-        Queue<int> positionsX = new Queue<int>(new List<int>() { -550, 0, 550 });
+        int screen = Screen.width/2;
+        Queue<int> positionsX = new Queue<int>(new List<int>() { screen*-1 + screen/2, 0, screen - screen/2 });
         List<string> upgrades = new List<string>();
         
         for (int i = 0; i < positionsX.Count; i++)
