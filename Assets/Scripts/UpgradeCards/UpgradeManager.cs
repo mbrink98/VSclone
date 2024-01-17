@@ -18,7 +18,7 @@ public class UpgradeManager : MonoBehaviour
 
     public Dictionary<string, float> upgradeValues = new Dictionary<string, float>()
     {
-        {"AttackSpeed", 0.7f}, // Better : DOWN THE DELAY
+        // {"AttackSpeed", 0.7f}, // Better : DOWN THE DELAY
         {"MovementSpeed", 1.5f}, // Better : UP
         {"Health", 1.6f}, // Better : UP
         {"Ammo", 1f}, // Better : UP
@@ -27,7 +27,7 @@ public class UpgradeManager : MonoBehaviour
 
     public Dictionary<string, string> upgradeDescription = new Dictionary<string, string>()
     {
-        {"AttackSpeed", "Increase Attackspeed"},
+        // {"AttackSpeed", "Increase Attackspeed"},
         {"MovementSpeed", "Increase Movementspeed"},
         {"Health", "Increase Health"},
         {"Ammo", "Increase Ammo"},
@@ -36,7 +36,7 @@ public class UpgradeManager : MonoBehaviour
 
     public Dictionary<string, string> upgradeImage = new Dictionary<string, string>()
     {
-        {"AttackSpeed", "AttackSpeedUp"},
+        // {"AttackSpeed", "AttackSpeedUp"},
         {"MovementSpeed", "MovementSpeedUp"},
         {"Health", "HealthUp"},
         {"Ammo", "AmmoUp"},
@@ -44,7 +44,10 @@ public class UpgradeManager : MonoBehaviour
     };
 
     private List<string> upgradeNames2 = new List<string>(){
-        "AttackSpeed","MovementSpeed","Health","Ammo", "ReloadSpeed",
+        "MovementSpeed",
+        "Health",
+        "Ammo",
+        "ReloadSpeed",
     };
 
 
@@ -67,8 +70,18 @@ public class UpgradeManager : MonoBehaviour
         _instance = this;
     }
 
+    // string log = "";
+
     void Start()
     {
+        // log = "upgradeNames2 = ";
+        // for (int i = 0; i < upgradeNames2.Count; i++)
+        // {
+        //     log += upgradeNames2[i]+"; ";
+            
+        // }
+        // Debug.Log(log);
+
     }
 
     public void GenerateUpgrades()
@@ -84,9 +97,9 @@ public class UpgradeManager : MonoBehaviour
             {
                 upgradeName = upgradeNames2[Range(0, upgradeNames2.Count)];
             }
-            upgrades.Add(upgradeName); 
+            upgrades.Add(upgradeName);
         }
-
+        
         // Generate the Upgrades
         for (int i = 0; i < upgrades.Count; i++)
         {
@@ -107,19 +120,19 @@ public class UpgradeManager : MonoBehaviour
     {
         for (int i = 0; i < generatedUpgrades.Count; i++)
         {
-            Debug.Log("Destroy: " + generatedUpgrades[i]);
+            // Debug.Log("Destroy: " + generatedUpgrades[i]);
             Destroy(generatedUpgrades[i]);
         }
     }
 
     public void UpgradeChosen(string upgradeName)
     {
-
+        GameManager.Instance.playerAttackDelay *= 0.7f;
         switch (upgradeName)
         {
-            case "AttackSpeed":
-                GameManager.Instance.playerAttackDelay *= upgradeValues[upgradeName];
-                break;
+            // case "AttackSpeed":
+            //     GameManager.Instance.playerAttackDelay *= upgradeValues[upgradeName];
+            //     break;
             case "MovementSpeed":
                 GameManager.Instance.playerMovementSpeed *= upgradeValues[upgradeName];
                 GameManager.Instance.playerRotationSpeed *= upgradeValues[upgradeName];

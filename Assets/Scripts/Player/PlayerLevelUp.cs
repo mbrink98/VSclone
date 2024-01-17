@@ -36,7 +36,7 @@ public class PlayerLevelUp : MonoBehaviour
                     gm.playerEXP -= xp;
                     gm.score += (int)xp;
                     playerLevelUpEvent.Invoke();
-                    Debug.Log("LVL: "+ GameManager.Instance.levels.Peek());
+                    // Debug.Log("LVL: "+ GameManager.Instance.levels.Peek());
                // if (GameManager.Instance.levels.Count != 0) {                 //habs auf Array umgestellt, hoffe es gibt keine bugs 
                 //    GameManager.Instance.levels.Dequeue();
               //  }

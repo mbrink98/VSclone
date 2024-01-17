@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEditor;
 
 public class ExplodeBomb : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class ExplodeBomb : MonoBehaviour
         time += Time.deltaTime;
             if (time >= fuseTime){
                 Explode();
+                Debug.Log("exploded");
             }
     }
     private void OnDrawGizmos(){
@@ -31,7 +33,7 @@ public class ExplodeBomb : MonoBehaviour
 
     }
     void Explode(){
-
+    // Handles.DrawWireDisc(transform.position, Vector3.up, ExplosionRadius);   
      inExplosionRadius = Physics2D.OverlapCircleAll(transform.position,ExplosionRadius);
                 
                 foreach(Collider2D o in inExplosionRadius){
