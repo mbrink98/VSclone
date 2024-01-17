@@ -69,7 +69,7 @@ public class MapManager : MonoBehaviour
             Instantiate(borderPrefab, new Vector3(-size-1, i, 0), Quaternion.identity);
         }
         //Planets
-        Instantiate(sun, new Vector3(0f, 0f, 0f), Quaternion.identity);       //add sun in the middle
+        Instantiate(sun, new Vector3(60f, 0f, 0f), Quaternion.identity);       //add sun in the middle
 
         Vector3 cameraHalfDiagonal = Camera.main.ScreenToWorldPoint(
             new Vector3(Camera.main.pixelWidth, Camera.main.pixelHeight, 0)

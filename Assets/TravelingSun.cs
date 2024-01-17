@@ -13,7 +13,7 @@ public class TravelingSun : MonoBehaviour
     void Start()
     {
         // Set the center point of the circular path
-        centerPoint = transform.position;
+        centerPoint = new Vector2(0, 0);
     }
 
     void Update()
