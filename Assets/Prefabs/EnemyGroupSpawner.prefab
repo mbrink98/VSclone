@@ -98,6 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1556311748740161932, guid: 8219234c35b5ef8448f357c99514e8a4, type: 3}
-  bombEnemyPrefab: {fileID: 8896282202520869687, guid: 4280c680b74ef9543a94f343803c600d, type: 3}
+  meeleEnemyPrefab: {fileID: 5855497219267509073, guid: b320b628617ff5446aaa1bee770847e9, type: 3}
   sniperEnemyPrefab: {fileID: 1724638128973361666, guid: 042e014dcf67e9e48b7b1f7de6296560, type: 3}
   SpawnTime: 6

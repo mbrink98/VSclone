@@ -5,12 +5,12 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public GameObject bombEnemyPrefab;
+    public GameObject meeleEnemyPrefab;
     public GameObject sniperEnemyPrefab;
     private float time = 0f;
     private Vector2 pos = new Vector2(0, 0);
 
-    public float SpawnTime = 7f;
+    public float SpawnTime = 6f;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +45,7 @@ public class EnemySpawn : MonoBehaviour
                     if (spawn < 5) {
                         Instantiate(enemyPrefab, myPos, Quaternion.identity);
                     } else if (spawn >= 5 && spawn < 8) {
-                        Instantiate(bombEnemyPrefab, myPos, Quaternion.identity);
+                        Instantiate(meeleEnemyPrefab, myPos, Quaternion.identity);
                     } else {
                         Instantiate(sniperEnemyPrefab, myPos, Quaternion.identity);
                     }

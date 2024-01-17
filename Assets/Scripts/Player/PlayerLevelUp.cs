@@ -34,7 +34,7 @@ public class PlayerLevelUp : MonoBehaviour
                     GameManager.Instance.playerLVL++;
                     GameManager.Instance.playerEXP = 0;         //vllt geht beim lvlup überschüssige ep verloren
                     playerLevelUpEvent.Invoke();
-                    Debug.Log("LVL: "+ GameManager.Instance.levels.Peek());
+                    // Debug.Log("LVL: "+ GameManager.Instance.levels.Peek());
                // if (GameManager.Instance.levels.Count != 0) {                 //habs auf Array umgestellt, hoffe es gibt keine bugs 
                 //    GameManager.Instance.levels.Dequeue();
               //  }

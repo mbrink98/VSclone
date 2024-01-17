@@ -99,6 +99,10 @@ public class GameManager : MonoBehaviour
         "Gun", "Shotgun", "Laser"
     };
 
+    private List<string> weaponsDescription = new List<string>(){
+        "Single shot, normal speed", "Spread weapon, slow and tanky", "Penetrates enemies, rather slow and squishy"
+    };
+
     private List<GameObject> generatedChoices = new List<GameObject>();
 
     public UnityEvent selectWeaponEvent;
@@ -179,13 +183,7 @@ public class GameManager : MonoBehaviour
         _instance.enemySpawner4 = Instantiate(enemySpawnerPrefab, spawnTopBorder, Quaternion.identity);
         _instance.enemyMaxHealth = 1;
 
-        // //Bomber Enemy Spawner spawn
 
-        // Instantiate(enemyBomberSpawnerPrefab, spawnLeftBorder, Quaternion.identity);
-
-        // //SharpShooter Enemy Spawner spawn
-        
-        // Instantiate(enemySharpshooterSpawnerPrefab, spawnRightBorder, Quaternion.identity);
         gameManagerStarted.Invoke();
     } 
 
@@ -230,7 +228,7 @@ public class GameManager : MonoBehaviour
             weaponChoice.name = "Weapon-"+ weapons[i];
             Sprite weaponSprite = Resources.Load<Sprite>("Sprites/" + weapons[i]);
             weaponChoice.GetComponent<Image>().sprite = weaponSprite;
-            weaponChoice.GetComponentInChildren<TMP_Text>().text = weapons[i];
+            weaponChoice.GetComponentInChildren<TMP_Text>().text = weapons[i]+ ": "+ weaponsDescription[i];
 
             _instance.generatedChoices.Add(Instantiate(weaponChoice, weaponPosition, Quaternion.identity, canvas.transform));
         }
@@ -250,7 +248,7 @@ public class GameManager : MonoBehaviour
                 _instance.playerBulletSpeed = 10f;
                 _instance.playerAttackDelay = 0.0f;
                 _instance.playerMaxAmmo = 10f;
-                _instance.playerReloadSpeed = 1.5f;
+                _instance.playerReloadSpeed = 2f;
                 _instance.playerGun = "Gun";
 
                 _instance.playerMovementSpeed = 3f;
@@ -273,16 +271,16 @@ public class GameManager : MonoBehaviour
 
                 break;
             case "Laser":
-                _instance.playerBulletSpeed = 5f;
+                _instance.playerBulletSpeed = 15f;
                 _instance.playerAttackDelay = 1.5f;
                 _instance.playerMaxAmmo = 5f;
-                _instance.playerReloadSpeed = 5f;
+                _instance.playerReloadSpeed = 4f;
                 _instance.playerGun = "Laser";
 
                 _instance.playerMovementSpeed = 4f;
                 _instance.playerRotationSpeed = 150f;
-                _instance.playerMaxHealth = 3;
-                _instance.playerHealth = 3;
+                _instance.playerMaxHealth = 4;
+                _instance.playerHealth = 4;
 
                 break;
         }
