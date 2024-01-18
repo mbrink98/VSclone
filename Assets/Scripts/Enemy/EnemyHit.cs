@@ -13,7 +13,11 @@ public class EnemyHit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHp = GameManager.Instance.enemyMaxHealth;
+        if (GameManager.Instance.enemyMaxHealth >= 3) {
+            maxHp = 3;
+        } else {
+            maxHp = GameManager.Instance.enemyMaxHealth;
+        }   
         hp = maxHp;
         m_Animator = gameObject.GetComponent<Animator>();
     }
