@@ -1670,6 +1670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 915550047}
+  statDisplay: {fileID: 194373199}
 --- !u!114 &915550047
 MonoBehaviour:
   m_ObjectHideFlags: 0
