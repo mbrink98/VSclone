@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent selectWeaponEvent;
     public UnityEvent playerUpgradeEvent;
+    public UnityEvent upgradeOrWeaponChosenEvent;
     public UnityEvent gameManagerInit;
     public UnityEvent gameManagerStarted;
     public UnityEvent gameOverEvent;
@@ -319,6 +320,7 @@ public class GameManager : MonoBehaviour
         _instance.playerAmmo = _instance.playerMaxAmmo;
 
         DestroyChoices();
+        _instance.upgradeOrWeaponChosenEvent.Invoke();
     }
 
     public void DestroyChoices()
@@ -338,6 +340,7 @@ public class GameManager : MonoBehaviour
 
     public void UpgradeChosen()
     {
+        _instance.upgradeOrWeaponChosenEvent.Invoke();
         _instance.gameIsPaused = false;
     }
 
