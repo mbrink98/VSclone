@@ -335,7 +335,7 @@ public class GameManager : MonoBehaviour
     public void PlayerLevelUp()
     {
         _instance.gameIsPaused = true;
-        playerUpgradeEvent.Invoke();
+        _instance.playerUpgradeEvent.Invoke();
     }
 
     public void UpgradeChosen()
