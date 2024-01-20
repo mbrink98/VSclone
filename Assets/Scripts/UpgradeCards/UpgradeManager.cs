@@ -19,10 +19,10 @@ public class UpgradeManager : MonoBehaviour
     public Dictionary<string, float> upgradeValues = new Dictionary<string, float>()
     {
         // {"AttackSpeed", 0.7f}, // Better : DOWN THE DELAY
-        {"MovementSpeed", 1.5f}, // Better : UP
+        {"MovementSpeed", 1.2f}, // Better : UP
         {"Health", 1.6f}, // Better : UP
         {"Ammo", 1f}, // Better : UP
-        {"ReloadSpeed", 0.8f}, // Better : DOWN
+        {"ReloadSpeed", 0.9f}, // Better : DOWN
     };
 
     public Dictionary<string, string> upgradeDescription = new Dictionary<string, string>()

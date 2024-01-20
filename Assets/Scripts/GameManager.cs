@@ -296,7 +296,7 @@ public class GameManager : MonoBehaviour
                 _instance.playerGun = "Shotgun";
 
                 _instance.playerMovementSpeed = 1.5f;
-                _instance.playerRotationSpeed = 80f;
+                _instance.playerRotationSpeed = 90f;
                 _instance.playerMaxHealth = 10;
                 _instance.playerHealth = 10;
 
@@ -308,8 +308,8 @@ public class GameManager : MonoBehaviour
                 _instance.playerReloadSpeed = 4f;
                 _instance.playerGun = "Laser";
 
-                _instance.playerMovementSpeed = 4f;
-                _instance.playerRotationSpeed = 150f;
+                _instance.playerMovementSpeed = 3.5f;
+                _instance.playerRotationSpeed = 120f;
                 _instance.playerMaxHealth = 4;
                 _instance.playerHealth = 4;
 
